@@ -1,4 +1,17 @@
 h1 {
 	text-align: center;
-	margin: 30px 30px;
+	margin: 50px 50px;
+}
+
+h2 {
+	font-size: 15pt;
+}
+
+h3 {
+	font-size: 12pt;
+}
+
+.card {
+	margin-left: 35%;
+	margin-right: 35%;
 }
