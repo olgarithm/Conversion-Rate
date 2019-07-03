@@ -4,13 +4,43 @@
 	<head>
 	  <meta charset="utf-8">
 	  <title>Conversions</title>
+	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	  <link rel="stylesheet" href="style.css">
 	  <script src="conversion.js"></script>
 	</head>
 	<body>
-		Danish Kroner:
-		<input id="danish" type="number" name="danish-kroner"><br/>
-		US Dollar:
-		<input id="dollar" type="number" name="us-dollar"><br/>
-		<button id="submit">Submit</button>
+
+		<h1>Money Conversions</h1>
+		<div class="card">
+			<h5 class="card-header">Convert between Danish Kroner and US Dollar</h5>
+			<div class="card-body">
+			<p class="card-text">
+				Danish Kroner:
+				<input id="danish" type="number" name="danish-kroner">
+			</p>
+			<p class="card-text">
+				US Dollar:
+				<input id="dollar" type="number" name="us-dollar">
+			</p>
+			<button id="convert" class="btn btn-primary">Convert</button>
+			<button id="clear" class="btn btn-secondary">Clear</button>
+		  </div>
+		</div>
+		<br/>
+		<div class="card">
+			<h5 class="card-header">Convert between Swedish Krona and US Dollar</h5>
+			<div class="card-body">
+			<p class="card-text">
+				Swedish Krona:
+				<input id="swedish" type="number" name="swedish-krona">
+			</p>
+			<p class="card-text">
+				US Dollar:
+				<input id="dollar-second" type="number" name="us-dollar">
+			</p>
+			<button id="convert-second" class="btn btn-primary">Convert</button>
+			<button id="clear-second" class="btn btn-secondary">Clear</button>
+		  </div>
+		</div>
 	</body>
 </html>
