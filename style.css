@@ -39,3 +39,7 @@ label {
 button {
 	margin-right: 10px;
 }
+
+#clear, #clear-second {
+	width: 80px;
+}
