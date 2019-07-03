@@ -18,8 +18,24 @@ h3 {
 .disclaimer {
 	margin-bottom: 20px;
 	font-weight: bold;
+	text-align: center;
 }
 
 .hidden {
 	display: none;
+}
+
+label {
+	display: inline-block;
+	width: 120px;
+	text-align: right;
+}
+
+.button-container {
+	display: flex;
+	justify-content: center;
+}
+
+button {
+	margin-right: 10px;
 }
