@@ -12,8 +12,7 @@ h3 {
 }
 
 .card {
-	margin-left: 35%;
-	margin-right: 35%;
+	width: 500px;
 }
 
 .disclaimer {

@@ -22,7 +22,7 @@
 				convertMoneyHelper("danish", "dollar", 6.60859);
 				id("disclaimer-danish").innerText = "1 UDS = 6.608 DKK " + 
 				"(Note this is an approximation)";
-				id("disclaimer-danish").removeClass("hidden");
+				id("disclaimer-danish").classList.remove("hidden");
 			});
 	}
 
@@ -31,7 +31,7 @@
 		convertMoneyHelper("danish", "dollar", rate);
 		id("disclaimer-danish").innerText = "1 USD = " + rate.toFixed(3) + " DKK " + 
 			"on " + response.date;
-		id("disclaimer-danish").removeClass("hidden");
+		id("disclaimer-danish").classList.remove("hidden");
 	}
 
 	function convertMoneyHelper(firstCurrency, secondCurrency, rate) {
@@ -51,7 +51,7 @@
 				convertMoneyHelper("swedish", "dollar-second", 9.31384);
 				id("disclaimer-swedish").innerText = "1 USD = 9.31384 SEK " + 
 				"(Note this is an approximation)";
-				id("disclaimer-swedish").removeClass("hidden");
+				id("disclaimer-swedish").classList.remove("hidden");
 			});
 	}
 
@@ -60,7 +60,7 @@
 		convertMoneyHelper("swedish", "dollar-second", rate);
 		id("disclaimer-swedish").innerText = "1 USD = " + rate.toFixed(3) + " SEK " + 
 			"on " + response.date;
-		id("disclaimer-swedish").removeClass("hidden");
+		id("disclaimer-swedish").classList.remove("hidden");
 	}
 
 	function id(elementId) {
@@ -71,7 +71,7 @@
 		id(firstInput).value = "";
 		id(secondInput).value = "";
 		id(disclaimer).innerText = "";
-		id(disclaimer).addClass("hidden");
+		id(disclaimer).classList.add("hidden");
 	}
 
 	function checkStatus(response) {
