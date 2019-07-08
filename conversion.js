@@ -11,6 +11,10 @@
 		id("clear-second").addEventListener("click", function() {
 			clearInput("dollar-second", "swedish", "disclaimer-swedish");
 		})
+		id("convert-third").addEventListener("click", convertEuro);
+		id("clear-third").addEventListener("click", function() {
+			clearInput("dollar-third", "euro", "disclaimer-euro");
+		})
 	}
 
 	function convertKroner() {
@@ -36,9 +40,9 @@
 
 	function convertMoneyHelper(firstCurrency, secondCurrency, rate) {
 		if (id(firstCurrency).value) {
-			id(secondCurrency).value = parseInt(id(firstCurrency).value) / rate;
+			id(secondCurrency).value = parseFloat(id(firstCurrency).value) / rate;
 		} else {
-			id(firstCurrency).value = parseInt(id(secondCurrency).value) * rate;
+			id(firstCurrency).value = parseFloat(id(secondCurrency).value) * rate;
 		}
 	}
 
@@ -61,6 +65,27 @@
 		id("disclaimer-swedish").innerText = "1 USD = " + rate.toFixed(3) + " SEK " + 
 			"on " + response.date;
 		id("disclaimer-swedish").classList.remove("hidden");
+	}
+
+	function convertEuro() {
+		fetch("https://api.exchangeratesapi.io/latest?base=USD&symbols=EUR")
+			.then(checkStatus)
+			.then(JSON.parse)
+			.then(convertEuroHelper)
+			.catch(function(response) {
+				convertMoneyHelper("euro", "dollar", 0.888);
+				id("disclaimer-euro").innerText = "1 UDS = 0.888 EUR " + 
+				"(Note this is an approximation)";
+				id("disclaimer-euro").classList.remove("hidden");
+			});
+	}
+
+	function convertEuroHelper(response) {
+		let rate = parseFloat(response.rates.EUR);
+		convertMoneyHelper("euro", "dollar-third", rate);
+		id("disclaimer-euro").innerText = "1 USD = " + rate.toFixed(3) + " EUR " + 
+			"on " + response.date;
+		id("disclaimer-euro").classList.remove("hidden");
 	}
 
 	function id(elementId) {
